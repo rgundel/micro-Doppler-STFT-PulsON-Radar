@@ -16,47 +16,50 @@
 % This example script computes a micro-Doppler spectrogram from a real or a
 % complex range-time matrix of the pulsON P410 radar from TimeDomain (Humatics).
 
-%% clean and close workspace
+%% Clean and Close Workspace
 clc; clear; close all;
 
-%% for the matlab file *.mat
-[file,path] = uigetfile('M:\ewi\me\MS3\Ronny Guendel\PulsON_Data\MonostaticDataExtension\Ronny2nd\MAT_data_aligned\001_mon_wal_Ro2.mat');%  ('*.mat');
-data = load([path,file]);
+%% Load MATLAB File
+[file, path] = uigetfile('*.mat');  % Modify the path as needed
+data         = load([path, file]);
 
-%% extracting the rangemaps and the labels
-rm  = data.hil_resha_aligned;
-labels = data.lbl_out;
+%% Extract Range Maps and Labels
+rm      = data.hil_resha_aligned;
+labels  = data.lbl_out;
 
+%% Provide [Range Bins x Slowtime Samples x Radarnodes]
+[NTS, NScans, KK] = size(rm);  % Range map dimensions
+fprintf('The slowtime bins are: \t%i \nthe range bins are: \t%i\nthe radar nodes are: \t%i\n', NScans, NTS, KK');
 
-%% Providing the [range bins x slowtime samples x radarnodes]
-[NTS,NScans,KK] = size(rm);  % Range map vector [rangebins x slowtime samples x five radars]
-fprintf('The slowtime bins are: \t%i \nthe range bins are: \t%i\nthe radar nodes are: \t%i\n', NScans,NTS,KK')
+%% Initialize Parameters
+ts      = 0.0082;  % Sample time in sec
+fs_slow = 1 / ts;
+Rmin    = 1;       % Min range in m
+Rmax    = Rmin + 4.8;  % Max range in m
+T       = ts * NScans;
 
-%% Initialize parameters
-ts = 0.0082; % sample time in sec
-fs_slow = 1/ts;
-Rmin = 1; % min range in m
-Rmax = Rmin + 4.8; % max range in m
-T = ts*NScans;
-
-%% Plot the corresponding range mapswith samples
+%% Plot Range Maps with Samples
 figure(1);
 for k = 1:KK
-    subplot(KK+1,1,k);
-    imagesc([0 T], [Rmin Rmax],20*log10(abs(rm(:,:,k)))); axis xy
-    clim = get(gca,'CLim');
-    set(gca,'CLim',clim(2) + [-60 -10]);
-    colormap('jet'); axis xy; colorbar('east');
-    xlabel("slowtime (sec)"); ylabel("range (m)");
+    subplot(KK + 1, 1, k);
+    imagesc([0 T], [Rmin Rmax], 20 * log10(abs(rm(:, :, k)))); 
+    axis xy;
+    adjustPlotColorLimits(gca, [-60 -10]);
+    colormap('jet'); 
+    axis xy; 
+    colorbar('east');
+    xlabel("slowtime (sec)"); 
+    ylabel("range (m)");
 end
 
-%% Providing the labels
-time_samples = linspace(0,ts*length(labels),length(labels));
-subplot(KK+1,1,KK+1);
-plot(time_samples,labels,'red');
+%% Provide Labels
+time_samples = linspace(0, ts * length(labels), length(labels));
+subplot(KK + 1, 1, KK + 1);
+plot(time_samples, labels, 'red');
 xlim([-inf inf]);
 ylim([-1 10]);
-xlabel("slowtime (sec)"); ylabel("Classes");
+xlabel("slowtime (sec)"); 
+ylabel("Classes");
 drawnow;
 fprintf("the classes are:\n" + ...
     "1 Walking\n" + ...
@@ -69,44 +72,50 @@ fprintf("the classes are:\n" + ...
     "8 Standing up from the ground\n" + ...
     "9 Falling from Standing\n");
 
-%% STFT parameters
-win_size= 128;           % good sizes are about 0.5 to 1sec
-hop     = 4;            % hop size is equivalent to (window_size-window_overl)
-nfft    = 2*win_size;   % nfft points should be at least 2 times the win_size
-fs      = fs_slow;
+%% STFT Parameters
+win_size = 128;         % Good sizes are about 0.5 to 1 sec
+hop      = 4;           % Hop size is equivalent to (window_size-window_overlap)
+nfft     = 2 * win_size;  % nfft points should be at least 2 times the win_size
+fs       = fs_slow;
 
-
-%% For loop for the micro_Doppler compuation
+%% Loop for Micro-Doppler Computation
 for k = 1:KK
-    rt_matrix = rm(:,:,k);
+    rt_matrix = rm(:, :, k);
 
-    %% Compute the complex range time matrix using pcode fuction
+    %% Compute Complex Range Time Matrix
     if isreal(rt_matrix)
         [rt_matrix_compl] = fct_rt_matrix_real_to_complex(rt_matrix);
     else
         rt_matrix_compl = rt_matrix;
     end
 
-    %% compute the micro Doppler spectra using pcode STFT fuction
-    [mD_matrix,f,t] = fct_stft_pulson_radar(rt_matrix_compl, hann(win_size), hop, nfft, fs);
+    %% Compute Micro Doppler Spectra
+    [mD_matrix, f, t] = fct_stft_pulson_radar(rt_matrix_compl, hann(win_size), hop, nfft, fs);
 
-    %% show the micro-Doppler spectrogram
+    %% Show Micro-Doppler Spectrogram
     figure(2);
-    subplot(KK+1,1,k);
-    imagesc(t,f, 10*log10(abs(mD_matrix).^2));
+    subplot(KK + 1, 1, k);
+    imagesc(t, f, 10 * log10(abs(mD_matrix).^2));
     axis xy;
     ylabel('Doppler (Hz)');
     xlabel('Time (s)');
     colormap jet;
     colorbar;
-    clim = get(gca,'CLim');
-    set(gca,'CLim',clim(2) + [-60 -10]);
+    adjustPlotColorLimits(gca, [-60 -10]);
 end
-%% Providing the labels
-time_samples = linspace(0,ts*length(labels),length(labels));
-subplot(KK+1,1,KK+1);
-plot(time_samples,labels,'red');
+
+%% Provide Labels (Repeated for Consistency)
+time_samples = linspace(0, ts * length(labels), length(labels));
+subplot(KK + 1, 1, KK + 1);
+plot(time_samples, labels, 'red');
 xlim([-inf inf]);
 ylim([-1 10]);
-xlabel("slowtime (sec)"); ylabel("Classes");
+xlabel("slowtime (sec)"); 
+ylabel("Classes");
 drawnow;
+
+%% Helper Function to Adjust Plot Color Limits
+function adjustPlotColorLimits(ax, dynamicRange)
+    clim = get(ax, 'CLim');
+    set(ax, 'CLim', clim(2) + dynamicRange);
+end
