@@ -3,7 +3,7 @@
 _This example project computes a micro-Doppler spectrogram from a real or a complex range-time matrix of the PulsON P410 radar from TimeDomain (Humatics)._
 
 ## Process Flow Illustration
-![Range-Time Map](rangeTime_figure.jpg) → ![Micro-Doppler Spectrogram](microDoppler_figure.jpg)
+![Range-Time Map](rangeTime_figure.jpg) ![Arrow](ARROW_IMAGE.jpg) ![Micro-Doppler Spectrogram](microDoppler_figure.jpg)
 
 ## Files and Functions in the Project
 ### Main Files
