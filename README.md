@@ -27,7 +27,7 @@ This function `main_stft_p410_network_public.m` computes the micro-Doppler spect
 Note: When using this code or the data, we would appreciate proper citation of our work using the references provided below.
 </span>
 
-# The year of blue [Blue] (#) 
+# #0969DA The year of blue [Blue] (#) 
 
 ## References
 1. R. G. Guendel, M. Unterhorst, E. Gambi, F. Fioranelli and A. Yarovoy, "Continuous human activity recognition for arbitrary directions with distributed radars," in 2021 IEEE Radar Conference (RadarConf21), Atlanta, GA, USA, 2021, pp. 1-6, doi: [10.1109/RadarConf2147009.2021.9454972](https://doi.org/10.1109/RadarConf2147009.2021.9454972).
