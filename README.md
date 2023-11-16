@@ -23,11 +23,9 @@ This function `main_stft_p410_public.m` computes the micro-Doppler spectrogram f
 ## To `main_stft_p410_network_public.m`
 This function `main_stft_p410_network_public.m` computes the micro-Doppler spectrograms from all radars in the network when using the public data: [`https://doi.org/10.4121/16691500`](https://doi.org/10.4121/16691500). It utilizes the two functions (`fct_rt_matrix_real_to_complex.p`, `fct_stft_pulson_radar.p`) for computing the complex range-time matrices and generating the micro-Doppler spectrograms, including the provided label vector.
 
-<span style="color:red; font-weight:bold;">
-Note: When using this code or the data, we would appreciate proper citation of our work using the references provided below.
-</span>
 
-# #0969DA The year of blue [Blue] (#) 
+### **Note:** When using this code or the data, we would appreciate properly citing our work using the references provided below.
+
 
 ## References
 1. R. G. Guendel, M. Unterhorst, E. Gambi, F. Fioranelli and A. Yarovoy, "Continuous human activity recognition for arbitrary directions with distributed radars," in 2021 IEEE Radar Conference (RadarConf21), Atlanta, GA, USA, 2021, pp. 1-6, doi: [10.1109/RadarConf2147009.2021.9454972](https://doi.org/10.1109/RadarConf2147009.2021.9454972).
