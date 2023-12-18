@@ -3,7 +3,8 @@
 [![DOI](https://zenodo.org/badge/716959989.svg)](https://zenodo.org/doi/10.5281/zenodo.10402955)
 
 ## BibTeX of this project: 
-```@software{Guendel_micro-Doppler-STFT-PulsON-Radar_2023,
+```bib
+@software{Guendel_micro-Doppler-STFT-PulsON-Radar_2023,
 author  = {Guendel, Ronny Gerhard},
 doi     = {10.5281/zenodo.10402956},
 month   = dec,
@@ -16,7 +17,8 @@ year    = {2023}
 
 or 
 
-```@misc{Guendel_micro-Doppler-STFT-PulsON-Radar_2023,
+```bib
+@misc{Guendel_micro-Doppler-STFT-PulsON-Radar_2023,
 author  = {Guendel, Ronny Gerhard},
 doi     = {10.5281/zenodo.10402956},
 month   = dec,
