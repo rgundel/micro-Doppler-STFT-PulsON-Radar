@@ -1,0 +1,9 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: Guendel
+  given-names: Ronny G.
+orcid: https://orcid.org/0000-0002-7824-4318
+title:rgundel/micro-Doppler-STFT-PulsON-Radar: Initial Release
+version: 0.1.0
+date-released: 2023-12-18
