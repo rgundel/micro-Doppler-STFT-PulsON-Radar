@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/716959989.svg)](https://zenodo.org/doi/10.5281/zenodo.10402955)
 
-BibTeX of this project: 
+## BibTeX of this project: 
 ```@software{Guendel_micro-Doppler-STFT-PulsON-Radar_2023,
 author  = {Guendel, Ronny Gerhard},
 doi     = {10.5281/zenodo.10402956},
@@ -11,7 +11,8 @@ title   = {{micro-Doppler-STFT-PulsON-Radar}},
 url     = {https://github.com/rgundel/micro-Doppler-STFT-PulsON-Radar},
 version = {0.1.0},
 year    = {2023}
-}'''
+}
+```
 
 or 
 
@@ -23,7 +24,8 @@ title   = {{micro-Doppler-STFT-PulsON-Radar}},
 url     = {https://doi.org/10.5281/zenodo.10402956},
 version = {0.1.0},
 year    = {2023}
-}'''
+}
+```
 
 _This project demonstrates the computation of micro-Doppler spectrograms using the PulsON P410 radar data from TimeDomain (Humatics). It includes two main MATLAB files: `main_stft_p410_network_public.m` for processing data from a distributed radar network dataset, available at [this dataset](https://doi.org/10.4121/16691500), and `main_stft_p410_public.m`, which serves as an illustrative example showing how to transform range-time data into micro-Doppler spectrograms._
 
