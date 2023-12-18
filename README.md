@@ -1,5 +1,7 @@
 # Micro-Doppler Spectrogram Computation of PulsON P410 Radar from TimeDomain (Humatics)
 
+[![DOI](https://zenodo.org/badge/716959989.svg)](https://zenodo.org/doi/10.5281/zenodo.10402955)
+
 _This project demonstrates the computation of micro-Doppler spectrograms using the PulsON P410 radar data from TimeDomain (Humatics). It includes two main MATLAB files: `main_stft_p410_network_public.m` for processing data from a distributed radar network dataset, available at [this dataset](https://doi.org/10.4121/16691500), and `main_stft_p410_public.m`, which serves as an illustrative example showing how to transform range-time data into micro-Doppler spectrograms._
 
 ## Process Flow Illustration
