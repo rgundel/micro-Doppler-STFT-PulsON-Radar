@@ -71,8 +71,9 @@ BibTeX:
       title     ={Continuous human activity recognition for arbitrary directions with distributed radars}, 
       year      ={2021},
       pages     ={1-6},
-      doi       ={10.1109/RadarConf2147009.2021.9454972}}
+      doi       ={10.1109/RadarConf2147009.2021.9454972}}```
 
+```bib
 @article{https://doi.org/10.1049/rsn2.12249,
       author    = {Guendel, Ronny G. and Fioranelli, Francesco and Yarovoy, Alexander},
       title     = {Distributed radar fusion and recurrent networks for classification of continuous human activities},
@@ -81,12 +82,13 @@ BibTeX:
       number    = {7},
       pages     = {1144-1161},
       year      = {2022},
-      doi       = {10.1049/rsn2.12249}}
+      doi       = {10.1049/rsn2.12249}}```
 
+```bib
 @misc{Guendel2022, 
     author     = {Guendel, Ronny and Unterhorst, Matteo and Fioranelli, Francesco and Yarovoy, Alexander},
     title      = {Dataset of continuous human activities performed in arbitrary directions collected with a distributed radar network of five nodes},
     year       = {2021}, 
     month      = {Nov}, 
     url        = {https://doi.org/10.4121/16691500}, 
-    doi        = {10.4121/16691500}} 
+    doi        = {10.4121/16691500}}``` 
