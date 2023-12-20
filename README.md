@@ -71,7 +71,8 @@ BibTeX:
       title     ={Continuous human activity recognition for arbitrary directions with distributed radars}, 
       year      ={2021},
       pages     ={1-6},
-      doi       ={10.1109/RadarConf2147009.2021.9454972}}```
+      doi       ={10.1109/RadarConf2147009.2021.9454972}}
+```
 
 ```bib
 @article{https://doi.org/10.1049/rsn2.12249,
@@ -82,7 +83,8 @@ BibTeX:
       number    = {7},
       pages     = {1144-1161},
       year      = {2022},
-      doi       = {10.1049/rsn2.12249}}```
+      doi       = {10.1049/rsn2.12249}}
+```
 
 ```bib
 @misc{Guendel2022, 
@@ -91,4 +93,5 @@ BibTeX:
     year       = {2021}, 
     month      = {Nov}, 
     url        = {https://doi.org/10.4121/16691500}, 
-    doi        = {10.4121/16691500}}``` 
+    doi        = {10.4121/16691500}}
+``` 
